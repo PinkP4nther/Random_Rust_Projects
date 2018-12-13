@@ -1,18 +1,10 @@
 /*
- * Load in lists (Generate all variants before? Or generate on the fly by pushing extensions
- * on to String in Vector)
- * Generate threads of function
- * Threads grab entries from Arc<Mutex<Vec<String>>>
- * Or step_by(threadcount) through Arc<Vec<String>> \_ whichever is fastest
- * Use mpsc to send message to main thread to print HTTP Code & URL
- * Eventually create data structures for each found entry etc.
+ * Fun with threading and practice using Mutex with Arc
  */
 
 use std::thread;
 use std::sync::{Mutex, Arc};
-use std::time::{Instant, Duration};
-use std::io::{self,Write,BufRead,BufReader};
-use std::fs::File;
+use std::time::Duration;
 use std::sync::mpsc;
 
 fn main() {
