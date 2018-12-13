@@ -51,6 +51,7 @@ fn work_func(tn: u32,wlist_tg: Arc<Mutex<Vec<String>>>,chan_send: mpsc::Sender<S
             println!("Hello! from thread {}",tn+1);
             let mut entry = wlist_tg.lock().unwrap();
             entry.push(format!("I am {} from thread {}",c+1,tn+1));
+            drop(entry);
             c += 1;
         } else {
             match chan_send.send(format!("Thread {} shutting down!",tn+1)) {
