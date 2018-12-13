@@ -1,5 +1,6 @@
 /*
  * Fun with threading and practice using Mutex with Arc
+ * Also practice with multithreading and mpsc channels
  */
 
 use std::thread;
