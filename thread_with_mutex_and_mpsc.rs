@@ -33,7 +33,6 @@ fn main() {
             println!("[!] {}", recvd);
             break;
         }
-
     }
 
     println!("Iterating through worked on vector!!!");
